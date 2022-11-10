@@ -4,22 +4,21 @@ using Novanet.OrderService.Application.Queries.Order.Query;
 
 namespace Novanet.OrderService.Controllers.Order;
 
-
 [ApiController]
-[Route("[controller]")] 
+[Route("[controller]")]
 public class OrderController : ControllerBase
 {
-    private readonly OrderQueries _orderQueries;
     private readonly OrderCommands _orderCommands;
-    
+    private readonly OrderQueries _orderQueries;
+
     public OrderController(OrderQueries orderQueries, OrderCommands orderCommands)
     {
         _orderQueries = orderQueries;
         _orderCommands = orderCommands;
     }
-    
+
     /// <summary>
-    /// Get order
+    ///     Get order
     /// </summary>
     /// <param name="orderId"></param>
     /// <returns></returns>
@@ -30,7 +29,7 @@ public class OrderController : ControllerBase
     }
 
     /// <summary>
-    /// Fetch all orders
+    ///     Fetch all orders
     /// </summary>
     /// <returns></returns>
     [HttpGet(Name = "Fetch")]
@@ -40,7 +39,7 @@ public class OrderController : ControllerBase
     }
 
     /// <summary>
-    /// Create new order
+    ///     Create new order
     /// </summary>
     /// <returns></returns>
     [HttpPost(Name = "CreateOrder")]

@@ -8,14 +8,14 @@ namespace Novanet.OrderService.Controllers.OrderLine;
 public class OrderLineController
 {
     private readonly OrderLineCommands _orderLineCommands;
-    
+
     public OrderLineController(OrderLineCommands orderLineCommands)
     {
         _orderLineCommands = orderLineCommands;
     }
-    
+
     /// <summary>
-    /// Add order line
+    ///     Add order line
     /// </summary>
     /// <param name="orderId"></param>
     /// <param name="line"></param>
@@ -27,7 +27,7 @@ public class OrderLineController
     }
 
     /// <summary>
-    /// Delete order line
+    ///     Delete order line
     /// </summary>
     /// <param name="orderId"></param>
     /// <param name="orderLineId"></param>

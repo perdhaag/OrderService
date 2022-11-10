@@ -1,12 +1,11 @@
 ﻿using Novanet.OrderService.Domain;
 
-namespace Novanet.OrderService.Application
+namespace Novanet.OrderService.Application;
+
+public class ProductService
 {
-    public class ProductService
+    public Product Get(int productID)
     {
-        public Product Get(int productID)
-        {
-            return null;
-        }
+        return null;
     }
 }

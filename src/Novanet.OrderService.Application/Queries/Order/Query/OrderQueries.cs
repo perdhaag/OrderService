@@ -4,13 +4,13 @@ namespace Novanet.OrderService.Application.Queries.Order.Query;
 
 public class OrderQueries
 {
-
     private readonly IOrderRepository _orderRepository;
+
     public OrderQueries(IOrderRepository orderRepository)
     {
         _orderRepository = orderRepository;
     }
-    
+
     public Domain.Order? Get(Guid orderId)
     {
         return _orderRepository.Get(orderId);

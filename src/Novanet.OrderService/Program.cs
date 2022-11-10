@@ -1,5 +1,4 @@
 using System.Reflection;
-using Novanet.OrderService.Application;
 using Novanet.OrderService.Application.Commands.Order;
 using Novanet.OrderService.Application.Commands.OrderLine;
 using Novanet.OrderService.Application.Queries.Order.Query;
@@ -26,6 +25,11 @@ builder.Services.AddTransient<OrderQueries>();
 builder.Services.AddTransient<OrderLineCommands>();
 builder.Services.AddTransient<ICustomerClient, CustomerClient>();
 builder.Services.AddTransient<IOrderRepository, OrderRepository>();
+
+builder.Services.AddHttpClient<ICustomerClient>(options =>
+{
+    options.BaseAddress = new Uri(builder.Configuration["Endpoints:NovanetAPI"]);
+});
 
 var app = builder.Build();
 

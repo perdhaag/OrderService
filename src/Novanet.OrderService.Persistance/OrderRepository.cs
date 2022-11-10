@@ -1,31 +1,29 @@
 ﻿using Novanet.OrderService.Domain;
 using Novanet.OrderService.Domain.Interfaces;
 
-namespace Novanet.OrderService.Persistance
+namespace Novanet.OrderService.Persistance;
+
+public class OrderRepository : IOrderRepository
 {
+    private readonly IList<Order> _orders = new List<Order>();
 
-    public class OrderRepository : IOrderRepository
+    public Order Save(Order order)
     {
-        private IList<Order> _orders = new List<Order>();
+        if (order.Id == new Guid())
+            order.NewGuid();
 
-        public Order Save(Order order)
-        {
-            if(order.Id == new Guid())
-                order.NewGuid();
+        _orders.Add(order);
 
-            _orders.Add(order);
+        return order;
+    }
 
-            return order;
-        }
+    public Order? Get(Guid orderId)
+    {
+        return _orders.FirstOrDefault(o => o.Id == orderId);
+    }
 
-        public Order? Get(Guid orderId)
-        {
-            return _orders.FirstOrDefault(o => o.Id == orderId);
-        }
-
-        public IList<Order> FetchAll()
-        {
-            return _orders;
-        }
+    public IList<Order> FetchAll()
+    {
+        return _orders;
     }
 }
