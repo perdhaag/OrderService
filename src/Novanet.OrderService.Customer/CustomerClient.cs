@@ -1,4 +1,5 @@
-﻿using Novanet.OrderService.Domain.Interfaces;
+﻿using System.Net.Http.Json;
+using Novanet.OrderService.Domain.Interfaces;
 
 namespace Novanet.OrderService.Customer;
 
@@ -13,9 +14,8 @@ public class CustomerClient : ICustomerClient
 
     public async Task<Domain.Customer> Get(Guid customerId)
     {
-        var response = await _client.GetAsync($"{_client.BaseAddress}customer?customerId={customerId}");
+        var response = await _client.GetFromJsonAsync<CustomerDto>($"{_client.BaseAddress}customer?customerId={customerId}");
 
-        var dto = await response.Content.ReadAsAsync<CustomerDto>();
-        return new Domain.Customer(dto.Id, dto.Name, dto.Adr1, dto.Zip, dto.City);
+        return new Domain.Customer(response.Id, response.Name, response.Adr1, response.Zip, response.City);
     }
 }
