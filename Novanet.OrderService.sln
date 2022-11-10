@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Novanet.OrderService", "src\Novanet.OrderService\Novanet.OrderService.csproj", "{8A18BD5F-45B0-48D8-ADC2-730DFB5A9CF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enterprise Business Rules", "src\Enterprise Business Rules", "{4B27C441-EA78-4E63-95EE-850ED10B2BEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface Adapters", "src\Interface Adapters", "{10118CFD-AA20-4F9B-8518-D0FE620C05A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Business Rules", "src\Application Business Rules", "{60F34835-0463-4EF7-A044-0DE4715DC767}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Novanet.OrderService.Customer", "src\Novanet.OrderService.Customer\Novanet.OrderService.Customer.csproj", "{06A13C34-79AC-4674-9345-C3FD39E43222}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Novanet.OrderService.Domain", "src\Novanet.OrderService.Domain\Novanet.OrderService.Domain.csproj", "{696724A7-DF23-4FBC-9337-9D936DCAD73A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Novanet.OrderService.Persistance", "src\Novanet.OrderService.Persistance\Novanet.OrderService.Persistance.csproj", "{AA8AAC2D-1719-4265-BD94-833E745E95DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Novanet.OrderService.Application", "src\Novanet.OrderService.Application\Novanet.OrderService.Application.csproj", "{48656BD1-2F0E-474A-B387-79AB07E4ABBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A18BD5F-45B0-48D8-ADC2-730DFB5A9CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A18BD5F-45B0-48D8-ADC2-730DFB5A9CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A18BD5F-45B0-48D8-ADC2-730DFB5A9CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A18BD5F-45B0-48D8-ADC2-730DFB5A9CF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06A13C34-79AC-4674-9345-C3FD39E43222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06A13C34-79AC-4674-9345-C3FD39E43222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06A13C34-79AC-4674-9345-C3FD39E43222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06A13C34-79AC-4674-9345-C3FD39E43222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{696724A7-DF23-4FBC-9337-9D936DCAD73A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{696724A7-DF23-4FBC-9337-9D936DCAD73A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{696724A7-DF23-4FBC-9337-9D936DCAD73A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{696724A7-DF23-4FBC-9337-9D936DCAD73A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA8AAC2D-1719-4265-BD94-833E745E95DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA8AAC2D-1719-4265-BD94-833E745E95DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA8AAC2D-1719-4265-BD94-833E745E95DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA8AAC2D-1719-4265-BD94-833E745E95DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48656BD1-2F0E-474A-B387-79AB07E4ABBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48656BD1-2F0E-474A-B387-79AB07E4ABBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48656BD1-2F0E-474A-B387-79AB07E4ABBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48656BD1-2F0E-474A-B387-79AB07E4ABBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E68E84FB-D875-4251-B6C5-6C264285C208}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8A18BD5F-45B0-48D8-ADC2-730DFB5A9CF7} = {10118CFD-AA20-4F9B-8518-D0FE620C05A2}
+		{06A13C34-79AC-4674-9345-C3FD39E43222} = {10118CFD-AA20-4F9B-8518-D0FE620C05A2}
+		{696724A7-DF23-4FBC-9337-9D936DCAD73A} = {4B27C441-EA78-4E63-95EE-850ED10B2BEC}
+		{AA8AAC2D-1719-4265-BD94-833E745E95DB} = {10118CFD-AA20-4F9B-8518-D0FE620C05A2}
+		{48656BD1-2F0E-474A-B387-79AB07E4ABBB} = {60F34835-0463-4EF7-A044-0DE4715DC767}
+	EndGlobalSection
+EndGlobal
