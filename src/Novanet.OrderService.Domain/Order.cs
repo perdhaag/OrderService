@@ -2,7 +2,7 @@
 
 namespace Novanet.OrderService.Domain;
 
-public class Order
+public class Order : AggregateRoot
 {
     public OrderId Id { get; private set; }
 

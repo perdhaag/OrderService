@@ -1,6 +1,6 @@
 ﻿namespace Novanet.OrderService.Domain;
 
-public class Product
+public class Product : AggregateRoot
 {
     public int Id { get; private set; }
     public string Name { get; private set; }
