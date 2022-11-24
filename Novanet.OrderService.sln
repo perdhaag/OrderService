@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Novanet.OrderService.Persis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Novanet.OrderService.Application", "src\Novanet.OrderService.Application\Novanet.OrderService.Application.csproj", "{48656BD1-2F0E-474A-B387-79AB07E4ABBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Novanet.OrderService.Core", "Novanet.OrderService.Core\Novanet.OrderService.Core.csproj", "{254462FA-80E8-43A2-AB6A-A71C193A6A1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{48656BD1-2F0E-474A-B387-79AB07E4ABBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48656BD1-2F0E-474A-B387-79AB07E4ABBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48656BD1-2F0E-474A-B387-79AB07E4ABBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{254462FA-80E8-43A2-AB6A-A71C193A6A1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{254462FA-80E8-43A2-AB6A-A71C193A6A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{254462FA-80E8-43A2-AB6A-A71C193A6A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{254462FA-80E8-43A2-AB6A-A71C193A6A1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,5 +64,6 @@ Global
 		{696724A7-DF23-4FBC-9337-9D936DCAD73A} = {4B27C441-EA78-4E63-95EE-850ED10B2BEC}
 		{AA8AAC2D-1719-4265-BD94-833E745E95DB} = {10118CFD-AA20-4F9B-8518-D0FE620C05A2}
 		{48656BD1-2F0E-474A-B387-79AB07E4ABBB} = {60F34835-0463-4EF7-A044-0DE4715DC767}
+		{254462FA-80E8-43A2-AB6A-A71C193A6A1F} = {4B27C441-EA78-4E63-95EE-850ED10B2BEC}
 	EndGlobalSection
 EndGlobal

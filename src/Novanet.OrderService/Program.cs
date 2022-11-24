@@ -1,6 +1,5 @@
 using System.Reflection;
-using Novanet.OrderService.Application.Commands.Order;
-using Novanet.OrderService.Application.Commands.OrderLine;
+using Novanet.OrderService.Application.Features;
 using Novanet.OrderService.Application.Queries.Order.Query;
 using Novanet.OrderService.Customer;
 using Novanet.OrderService.Domain.Interfaces;
@@ -20,11 +19,12 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 //Bør vel ha et interface her med en customer implementasjon. 
-builder.Services.AddTransient<OrderCommands>();
-builder.Services.AddTransient<OrderQueries>();
-builder.Services.AddTransient<OrderLineCommands>();
 builder.Services.AddTransient<ICustomerClient, CustomerClient>();
 builder.Services.AddTransient<IOrderRepository, OrderRepository>();
+builder.Services.AddTransient<OrderQueries>();
+builder.Services.AddScoped<RemoveOrderLine>();
+builder.Services.AddScoped<AddOrderLine>();
+builder.Services.AddScoped<CreateOrder>();
 
 builder.Services.AddHttpClient<ICustomerClient>(options =>
 {

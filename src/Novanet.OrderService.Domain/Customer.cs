@@ -2,7 +2,7 @@
 
 public class Customer
 {
-    public Customer(Guid id, string name, string address, int zip, string city)
+    public Customer(CustomerId? id, CustomerName name, CustomerAddress address, CustomerZip zip, CustomerCity city)
     {
         Id = id;
         Name = name;
@@ -11,9 +11,9 @@ public class Customer
         City = city;
     }
 
-    public Guid Id { get; }
-    public string Name { get; }
-    public string Address { get; }
-    public int Zip { get; }
-    public string City { get; }
+    public CustomerId? Id { get; }
+    public CustomerName Name { get; }
+    public CustomerAddress Address { get; }
+    public CustomerZip Zip { get; }
+    public CustomerCity City { get; }
 }

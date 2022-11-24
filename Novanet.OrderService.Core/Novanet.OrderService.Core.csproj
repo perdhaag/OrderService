@@ -4,10 +4,7 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <RootNamespace>Novanet.OrderService.Domain</RootNamespace>
     </PropertyGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\Novanet.OrderService.Core\Novanet.OrderService.Core.csproj" />
-    </ItemGroup>
 
 </Project>

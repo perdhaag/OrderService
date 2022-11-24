@@ -1,20 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
-using Novanet.OrderService.Application.Commands.Order;
+using Novanet.OrderService.Application.Features;
 using Novanet.OrderService.Application.Queries.Order.Query;
 
 namespace Novanet.OrderService.Controllers.Order;
 
+/// <inheritdoc />
 [ApiController]
 [Route("[controller]")]
 public class OrderController : ControllerBase
 {
-    private readonly OrderCommands _orderCommands;
+    private readonly CreateOrder _createOrder;
     private readonly OrderQueries _orderQueries;
 
-    public OrderController(OrderQueries orderQueries, OrderCommands orderCommands)
+    /// <inheritdoc />
+    public OrderController(OrderQueries orderQueries, CreateOrder createOrder)
     {
         _orderQueries = orderQueries;
-        _orderCommands = orderCommands;
+        _createOrder = createOrder;
     }
 
     /// <summary>
@@ -45,6 +47,6 @@ public class OrderController : ControllerBase
     [HttpPost(Name = "CreateOrder")]
     public async Task<Domain.Order> Create(Guid customerId)
     {
-        return await _orderCommands.Create(customerId);
+        return await _createOrder.Handle(new CreateOrder.Command(customerId));
     }
 }

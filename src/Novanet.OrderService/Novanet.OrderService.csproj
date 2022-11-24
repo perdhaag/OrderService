@@ -7,14 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Novanet.OrderService.Application\Novanet.OrderService.Application.csproj"/>
-        <ProjectReference Include="..\Novanet.OrderService.Customer\Novanet.OrderService.Customer.csproj"/>
-        <ProjectReference Include="..\Novanet.OrderService.Logic\Novanet.OrderService.Logic.csproj"/>
-        <ProjectReference Include="..\Novanet.OrderService.Persistance\Novanet.OrderService.Persistance.csproj"/>
+        <ProjectReference Include="..\Novanet.OrderService.Application\Novanet.OrderService.Application.csproj" />
+        <ProjectReference Include="..\Novanet.OrderService.Customer\Novanet.OrderService.Customer.csproj" />
+        <ProjectReference Include="..\Novanet.OrderService.Logic\Novanet.OrderService.Logic.csproj" />
+        <ProjectReference Include="..\Novanet.OrderService.Persistance\Novanet.OrderService.Persistance.csproj" />
     </ItemGroup>
 
     <PropertyGroup>

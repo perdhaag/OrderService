@@ -7,8 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Novanet.OrderService.Customer\Novanet.OrderService.Customer.csproj"/>
-        <ProjectReference Include="..\Novanet.OrderService.Persistance\Novanet.OrderService.Persistance.csproj"/>
+        <ProjectReference Include="..\Novanet.OrderService.Customer\Novanet.OrderService.Customer.csproj" />
+        <ProjectReference Include="..\Novanet.OrderService.Persistance\Novanet.OrderService.Persistance.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="OneOf" Version="3.0.223" />
     </ItemGroup>
 
 </Project>
