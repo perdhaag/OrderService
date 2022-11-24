@@ -2,7 +2,7 @@
 
 public class Customer
 {
-    public Customer(CustomerId? id, CustomerName name, CustomerAddress address, CustomerZip zip, CustomerCity city)
+    public Customer(CustomerId id, CustomerName name, CustomerAddress address, CustomerZip zip, CustomerCity city)
     {
         Id = id;
         Name = name;
@@ -11,7 +11,7 @@ public class Customer
         City = city;
     }
 
-    public CustomerId? Id { get; }
+    public CustomerId Id { get; }
     public CustomerName Name { get; }
     public CustomerAddress Address { get; }
     public CustomerZip Zip { get; }

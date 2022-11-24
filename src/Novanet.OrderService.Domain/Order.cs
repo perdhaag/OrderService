@@ -4,9 +4,9 @@ namespace Novanet.OrderService.Domain;
 
 public class Order
 {
-    public Guid Id { get; private set; }
+    public OrderId Id { get; private set; }
 
-    public int OrderType { get; private set; }
+    public OrderType OrderType { get; private set; }
     public Customer Customer { get; private set; }
 
     public decimal Total { get; private set; }
@@ -15,7 +15,7 @@ public class Order
 
     public void NewGuid()
     {
-        Id = Guid.NewGuid();
+        Id = OrderId.NewId();
     }
 
     public void UpdateFreightCost(Order order, int freightProductId)
