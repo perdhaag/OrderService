@@ -10,6 +10,11 @@ public class AddOrderLine
     private readonly IOrderRepository _orderRepository;
     private const int FreightProductId = 99;
 
+    public AddOrderLine(IOrderRepository orderRepository)
+    {
+        _orderRepository = orderRepository;
+    }
+
     public Domain.Order Handle(Command command)
     {
         var order = _orderRepository.Get(command.OrderId);

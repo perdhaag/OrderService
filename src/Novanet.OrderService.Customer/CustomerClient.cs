@@ -18,7 +18,7 @@ public class CustomerClient : ICustomerClient
         var response = await _client.GetFromJsonAsync<CustomerDto>($"{_client.BaseAddress}customer?customerId={customerId}");
 
         return new Domain.Customer(
-            response?.Id.To<CustomerId>(),
+            response?.Id.To<CustomerId>()!,
             response?.Name.To<CustomerName>()!,
             response!.Adr1.To<CustomerAddress>(), 
             response.Zip.To<CustomerZip>(), 

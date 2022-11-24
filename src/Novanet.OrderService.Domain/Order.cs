@@ -4,14 +4,14 @@ namespace Novanet.OrderService.Domain;
 
 public class Order : AggregateRoot
 {
-    public OrderId Id { get; private set; }
+    public OrderId Id { get; private set; } = null!;
 
-    public OrderType OrderType { get; private set; }
-    public Customer Customer { get; private set; }
+    public OrderType? OrderType { get; private set; }
+    public Customer Customer { get; private set; } = null!;
 
     public decimal Total { get; private set; }
 
-    public IList<OrderLine> OrderLines { get; private set; }
+    public IList<OrderLine> OrderLines { get; private set; } = null!;
 
     public void NewGuid()
     {
