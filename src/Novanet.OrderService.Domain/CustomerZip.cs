@@ -1,3 +1,3 @@
 namespace Novanet.OrderService.Domain;
 
-public record CustomerZip(int Value) : ValueObject<int>(Value);
+public record CustomerZip(string Value) : ValueObject<string>(Value);

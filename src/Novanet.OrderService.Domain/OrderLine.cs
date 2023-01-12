@@ -1,6 +1,8 @@
-﻿namespace Novanet.OrderService.Domain;
+﻿using Novanet.OrderService.Domain.Mementos;
 
-public class OrderLine
+namespace Novanet.OrderService.Domain;
+
+public class OrderLine : IHaveState<OrderLineMemento>
 {
     public OrderLine(int productId, string? productName, decimal cost, decimal quantity)
     {
@@ -17,7 +19,8 @@ public class OrderLine
     public decimal WeightPerUnit { get; private set; }
     public decimal WeightTotal { get; private set; }
     public decimal Cost { get; private set; }
-
+    
+    
     public void SetProductCost(decimal cost)
     {
         Cost = cost;
@@ -27,4 +30,15 @@ public class OrderLine
     {
         WeightTotal = weightTotal;
     }
+
+    public OrderLineMemento State => new()
+    {
+        Id = Id,
+        ProductId = ProductId,
+        ProductName = ProductName,
+        Quantity = Quantity,
+        WeightPerUnit = WeightPerUnit,
+        WeightTotal = WeightTotal,
+        Cost = Cost
+    };
 }

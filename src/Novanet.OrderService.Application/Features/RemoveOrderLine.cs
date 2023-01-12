@@ -25,8 +25,8 @@ public class RemoveOrderLine
         if (line == null)
             throw new ArgumentException("Invalid orderLineId");
 
-        order.OrderLines.Remove(line);
-
+        order.RemoveOrderLine(line);
+        
         order.UpdateFreightCost(order, FreightProductId);
 
         order.UpdateOrderTotal(order.OrderLines.Sum(l => l.Cost * l.Quantity));

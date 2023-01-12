@@ -1,6 +1,6 @@
 ﻿namespace Novanet.OrderService.Domain;
 
-public class Customer : AggregateRoot
+public partial class Customer : AggregateRoot
 {
     public Customer(CustomerId id, CustomerName name, CustomerAddress address, CustomerZip zip, CustomerCity city)
     {

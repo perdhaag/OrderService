@@ -1,13 +1,21 @@
 using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 using Novanet.OrderService.Application.Features;
 using Novanet.OrderService.Application.Queries.Order.Query;
 using Novanet.OrderService.Customer;
 using Novanet.OrderService.Domain.Interfaces;
+using Novanet.OrderService.Domain.Mementos;
+using Novanet.OrderService.Infrastructure;
 using Novanet.OrderService.Persistance;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<OrderContext>(options =>
+{
+    options.UseInMemoryDatabase("InMem");
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -26,10 +34,10 @@ builder.Services.AddScoped<RemoveOrderLine>();
 builder.Services.AddScoped<AddOrderLine>();
 builder.Services.AddScoped<CreateOrder>();
 
-builder.Services.AddHttpClient<ICustomerClient>(options =>
-{
-    options.BaseAddress = new Uri(builder.Configuration["Endpoints:NovanetAPI"]);
-});
+// builder.Services.AddHttpClient<ICustomerClient>(options =>
+// {
+//     options.BaseAddress = new Uri(builder.Configuration["Endpoints:NovanetAPI"]);
+// });
 
 var app = builder.Build();
 
@@ -46,4 +54,50 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.SeedOrderData();
+
 app.Run();
+
+public static class ServiceConfiguration
+{
+    public static void SeedOrderData(this IHost host)
+    {
+        using var scope = host.Services.CreateScope();
+        var dbContext = scope.ServiceProvider.GetRequiredService<OrderContext>();
+
+        var storeGuid = Guid.NewGuid();
+        var customerId = Guid.NewGuid();
+        
+        dbContext.Orders.Add(new OrderMemento
+        {
+            Id = storeGuid,
+            Total = 100,
+            OrderType = "Dagligvare",
+            CustomerId = customerId,
+            OrderLines = new List<OrderLineMemento>
+            {
+                new OrderLineMemento
+                {
+                    Id = Guid.NewGuid(),
+                    Cost = 50,
+                    Quantity = 1,
+                    ProductId = 1,
+                    ProductName = "Melk",
+                    WeightPerUnit = 10,
+                    WeightTotal = 10
+                }
+            }
+        });
+
+        dbContext.Customers.Add(new CustomerMemento
+        {
+            Id = customerId,
+            Name = "Ola Nordmann",
+            Address = "Osloveien 1",
+            City = "Oslo",
+            Zip = "1234"
+        });
+
+        dbContext.SaveChanges();
+    }
+}

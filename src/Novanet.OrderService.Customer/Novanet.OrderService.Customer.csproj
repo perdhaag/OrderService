@@ -7,11 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Novanet.OrderService.Domain\Novanet.OrderService.Domain.csproj"/>
+        <ProjectReference Include="..\Novanet.OrderService.Domain\Novanet.OrderService.Domain.csproj" />
+        <ProjectReference Include="..\Novanet.OrderService.Persistance\Novanet.OrderService.Persistance.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9"/>
+        <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
     </ItemGroup>
 
 </Project>

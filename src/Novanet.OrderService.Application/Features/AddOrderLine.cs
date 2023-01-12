@@ -24,7 +24,7 @@ public class AddOrderLine
 
         command.Line.SetProductTotalWeight(command.Line.Quantity * command.Line.WeightPerUnit);
 
-        order.OrderLines.Add(command.Line);
+        order.AddOrderLine(command.Line);
 
         order.UpdateFreightCost(order, FreightProductId);
 
